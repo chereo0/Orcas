@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About us</title>
+	<link rel="stylesheet" href="css/abou.css">
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Oswald:300,400"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,600,700,800,900&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+      .carousel {
+        padding-top: 20px;
+        margin-bottom: 20px;
+        background: rgba(95, 80, 80, 0.961);
+        position: relative;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+          0 0 40px rgba(0, 0, 0, 0.1) inset;
+      }
+      .carousel:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        height: 60px;
+        bottom: 0px;
+        left: 10px;
+        right: 10px;
+        border-radius: 100px / 20px;
+      }
+      .carousel .item {
+        text-align: center;
+        overflow: hidden;
+        height: 475px;
+      }
+      .carousel .item img {
+        max-width: 100%;
+        margin: 0 auto; /* Align slide image horizontally center in Bootstrap v3 */
+      }
+      .carousel .carousel-control {
+        width: 50px;
+        height: 50px;
+        background: #000;
+        margin: auto 0;
+        opacity: 0.8;
+      }
+      .carousel .carousel-control:hover {
+        opacity: 0.9;
+      }
+      .carousel .carousel-control i {
+        font-size: 41px;
+      }
+      .carousel-caption h3,
+      .carousel-caption p {
+        color: #fff;
+        display: inline-block;
+        font-family: "Oswald", sans-serif;
+        text-shadow: none;
+        margin-bottom: 20px;
+      }
+      .carousel-caption h3 {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 12px 24px;
+        font-size: 40px;
+        text-transform: uppercase;
+      }
+      .carousel-caption p {
+        background: rgba(95, 80, 80, 0.961);
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: 300;
+      }
+      .carousel-action {
+        padding: 10px 0 30px;
+      }
+      .carousel-action .btn {
+        min-height: 34px;
+        border-radius: 0;
+        margin: 3px;
+        min-width: 150px;
+        text-transform: uppercase;
+        font-family: "Oswald", sans-serif;
+      }
+      .carousel-action .btn-primary {
+        border-color: #000;
+        background: none;
+        color: #000;
+      }
+      .carousel-action .btn-primary:hover {
+        background: #000;
+        color: #fff;
+      }
+      .carousel-action .btn-success {
+        background: rgba(95, 80, 80, 0.961);
+        border: none;
+      }
+      .carousel-action .btn-success:hover {
+        background: black;
+      }
+      .carousel-indicators li,
+      .carousel-indicators li.active {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        margin: 1px 6px;
+      }
+      .carousel-indicators li {
+        background: transparent;
+        border: 1px solid #fff;
+      }
+      .carousel-indicators li.active {
+        background: rgba(95, 80, 80, 0.961);
+        border-color: rgba(95, 80, 80, 0.961);
+      }
+
+      div.stars {
+        align-items: center;
+        padding-top: 20px;
+        width: 270px;
+        margin-top: 5px;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .mt-200 {
+        margin-top: 10px;
+        text-align: center;
+        padding-top: 10px;
+		padding-bottom: 20px;
+      }
+
+      input.star {
+        display: none;
+      }
+
+      label.star {
+        text-align: center;
+        padding-top: 10px;
+
+        float: right;
+        margin-bottom: 200px;
+
+        padding: 10px;
+
+        font-size: 36px;
+
+        color: rgba(95, 80, 80, 0.961);
+
+        transition: all 0.2s;
+      }
+
+      input.star:checked ~ label.star:before {
+        text-align: center;
+
+        content: "\f005";
+
+        color: #fd4;
+
+        transition: all 0.25s;
+      }
+
+      input.star-5:checked ~ label.star:before {
+        text-align: center;
+
+        color: #fe7;
+
+        text-shadow: 0 0 20px rgba(95, 80, 80, 0.961);
+      }
+
+      input.star-1:checked ~ label.star:before {
+        color: #f62;
+      }
+
+      label.star:hover {
+        transform: rotate(-15deg) scale(1.3);
+      }
+
+      label.star:before {
+        text-align: center;
+
+        content: "\f006";
+
+        font-family: FontAwesome;
+      }
+	  
+    </style>
+  </head>
+  <body>
+	
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Carousel indicators -->
+			
+            <ol class="carousel-indicators">
+              <li
+                data-target="#myCarousel"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="IMG_8639-removebg-preview.png" alt="" />
+                <div class="carousel-caption">
+                  <h3>Black and white fashion</h3>
+                  <p>Where the fashion start</p>
+                  <div class="carousel-action">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-success">Try Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img src="hoddy.png" alt="" />
+                <div class="carousel-caption">
+                  <h3>Amazing Digital Experience</h3>
+                  <p>The best quality you will find it here.</p>
+                  <div class="carousel-action">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-success">Try Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img src="png1.png" alt="" />
+                <div class="carousel-caption">
+                  <h3>Unisex Fashion</h3>
+                  <p>The best get in our online market.</p>
+                  <div class="carousel-action">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-success">Try Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Carousel controls -->
+            <a
+              class="carousel-control left"
+              href="#myCarousel"
+              data-slide="prev"
+            >
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a
+              class="carousel-control right"
+              href="#myCarousel"
+              data-slide="next"
+            >
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center mt-200 ">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="stars">
+            <form action="">
+              <input class="star star-5" id="star-5" type="radio" name="star" />
+
+              <label class="star star-5" for="star-5"></label>
+
+              <input class="star star-4" id="star-4" type="radio" name="star" />
+
+              <label class="star star-4" for="star-4"></label>
+
+              <input class="star star-3" id="star-3" type="radio" name="star" />
+
+              <label class="star star-3" for="star-3"></label>
+
+              <input class="star star-2" id="star-2" type="radio" name="star" />
+
+              <label class="star star-2" for="star-2"></label>
+
+              <input class="star star-1" id="star-1" type="radio" name="star" />
+
+              <label class="star star-1" for="star-1"></label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="timeline-carousel">
+      <div class="container">
+        <div class="row">
+          <div class="col-8 offset-2 text-center mb-5">
+            <h1>About us</h1>
+            <p class="lead text-muted">
+              Below is a concept of the history of the fashion .
+            </p>
+            <p>
+              <a
+                class="text-white"
+                target="_blank"
+                href="Orcas.html"
+                >2024-2025</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+        <!--Timeline item-->
+        <div class="timeline-carousel__item">
+          <div class="timeline-carousel__image">
+            <div
+              class="media-wrapper media-wrapper--overlay"
+              style="
+                background: url('IMG_8616-removebg-preview.png')
+                  center center;
+                background-size:auto;
+              "
+            ></div>
+          </div>
+          <div class="timeline-carousel__item-inner">
+            <span class="year">20020-2021</span>
+            <span class="month">origin of Orcas</span>
+            <p>
+             Orcas is the origin of black and white color we take the label from the shape of the equria animals and we began with the company in 2020-2021
+            </p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+        <!--/Timeline item-->
+
+        <!--Timeline item-->
+        <div class="timeline-carousel__item">
+          <div class="timeline-carousel__image">
+            <div
+              class="media-wrapper media-wrapper--overlay"
+              style="
+                background: url('IMG_8615-removebg-preview.png')
+                  center center;
+                background-size: cover;
+              "
+            ></div>
+          </div>
+          <div class="timeline-carousel__item-inner">
+            <span class="year">2021</span>
+            <span class="month">The began of the website</span>
+            <p>The website Create with A big team of programming and ui-ux team and soon a new app will be in our stores.</p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+        <!--/Timeline item-->
+
+        <!--Timeline item-->
+        <div class="timeline-carousel__item">
+          <div class="timeline-carousel__image">
+            <div
+              class="media-wrapper media-wrapper--overlay"
+              style="
+                background: url('IMG_8639-removebg-preview.png')
+                  center center;
+                background-size: cover;
+              "
+            ></div>
+          </div>
+          <div class="timeline-carousel__item-inner">
+            <span class="year">2023</span>
+            <span class="month"
+              >Our outfit</span
+            >
+            <p>
+             Our outfit began with our fashion designer and we take the main colors black and white  
+            </p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+        <!--/Timeline item-->
+        </div>
+        </section>
+		
+	<script src="js/about.js"></script>
+</body>
+</html>
